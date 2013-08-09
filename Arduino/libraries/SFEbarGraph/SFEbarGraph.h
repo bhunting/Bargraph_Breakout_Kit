@@ -3,6 +3,7 @@ SparkFun Bargraph Breakout Arduino library
 Mike Grusin, SparkFun Electronics
 
 Revision history:
+1.2 08/09/2013 code now properly works for multiple BG instances (not daisy-chained)
 1.1 12/27/2011 updated for Arduino 1.0, changed begin() parameter order, fixed example which always used pin 10 for LAT, even on a Mega
 1.0 10/10/2011 release
 
@@ -100,6 +101,13 @@ class SFEbarGraph
 		// Sends the binary representation of "number" directly to the bargraph board
 		// Least-significant bit goes to lowest LED
 		// Note that this only works effectively for one bargraph board
+		
+		private:
+
+	unsigned char *_SFEbarGraphCanvas; // Pointer to array declared in begin()
+	unsigned char _SFEbarGraphLatchPin; // Latch pin
+	unsigned char _SFEbarGraphNumBoards; // Number of boards
+
 };
 
 #endif
