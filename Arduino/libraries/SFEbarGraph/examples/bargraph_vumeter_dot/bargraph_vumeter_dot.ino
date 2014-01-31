@@ -82,7 +82,7 @@ int sensorValue = 0;    // variable to store the value coming from the sensor
 unsigned int const ledcount = 30;
 int ledindex = 0;
 int ledindexold = 0;
-unsigned long ledPatterns[ledcount + 1]; // +0 for the zero, all off value
+unsigned long ledPatterns[ledcount + 1]; // +1 for the zero, all off value
 
 void setup()
 // Runs once upon reboot
